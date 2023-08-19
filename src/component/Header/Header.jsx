@@ -4,11 +4,11 @@ import './Header.css';
 const Header = () => {
     return (
         <nav className="header">
-            <img src={logo} alt="" />
+            <img src={logo} alt="Logo" />
             <div>
                 <a href="/Shop">Shop</a>
                 <a href="/Order">Order</a>
-                <a href="/Inventor">Inventor</a>
+                <a href="/Inventory">Inventory</a>
                 <a href="/Login">Login</a>
             </div>
         </nav>
