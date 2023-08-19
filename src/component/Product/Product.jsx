@@ -3,7 +3,9 @@ import './Product.css';
 const Product = (props) => {
     // eslint-disable-next-line react/prop-types
     const { id, img, name, price, seller, ratings } = props.product;
-    console.log(props.product);
+    const handleAddToCart = props.handleAddToCart;
+    // console.log(props.product);
+   
 
     return (
         <div className='product'>
@@ -16,7 +18,7 @@ const Product = (props) => {
                     <p><small>Rating : {ratings}</small></p>
                 </div>
             </div>
-            <button className='btn-cart'>Add to Cart</button>
+            <button onClick={()=>handleAddToCart(props.product)} className='btn-cart'>Add to Cart</button>
         </div>
     );
 };
