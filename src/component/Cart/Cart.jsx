@@ -3,8 +3,9 @@ import "./Cart.css";
 
 const Cart = ({cart}) => {
     console.log(cart);
+    //calculate cart item total price
     let total = 0;
-    const totalPrice = cart.reduce((initial,current)=>,total);
+    const totalPrice = cart.reduce((initial,current)=>initial+current.price,total);
     return (
         <div className='cart'>
             <h2>Order Summary</h2>
