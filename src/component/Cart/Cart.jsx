@@ -10,9 +10,9 @@ const Cart = ({ cart }) => {
     // const totalPrice = cart.reduce((initial,current)=>initial+current.price,total);
     for (const product of cart) {
         // setting the product quantity
-        if (product.quantity === 0){
-            product.quantity = 1;
-        }
+        // if (product.quantity === 0){
+        //     product.quantity = 1;
+        // }
         // another solution to set the product quantity
         // product.quantity = product.quantity || 1;
 
