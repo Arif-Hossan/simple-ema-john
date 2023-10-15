@@ -4,8 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px;
-    
+    padding: 0 100px; 
+   
 }
 .header a {
     text-decoration: none;

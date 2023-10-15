@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -8,6 +8,7 @@ import Shop from './component/Shop/Shop.jsx'
 import Orders from './component/Orders/Orders.jsx'
 import Inventory from './component/Inventory/Inventory.jsx'
 import Login from './component/Login/Login.jsx'
+import { cartProductsLoader } from './Loaders/CartProductsLoader'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/orders',
-        element:<Orders></Orders>
+        element:<Orders></Orders>,
+        loader:cartProductsLoader 
       },
       {
         path:'/inventory',
