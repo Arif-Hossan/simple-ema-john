@@ -6,6 +6,7 @@
   padding: 8px 23px 8px 8px;
   display: flex;
   align-items: center;
+  
 }
 .review-item img {
   width: 91px;
@@ -36,6 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
 }
 .btn-deleteIcon{
     width: 37px;
