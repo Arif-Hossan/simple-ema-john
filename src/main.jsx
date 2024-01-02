@@ -11,40 +11,43 @@ import Login from './component/Login/Login.jsx'
 import { cartProductsLoader } from './Loaders/CartProductsLoader'
 import Checkout from './component/Checkout/Checkout.jsx'
 import SingUp from './component/SignUp/SingUp.jsx'
+import AuthProvider from './providers/AuthProvider.jsx'
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<Home></Home>,
-    children:[
+    path: '/',
+    element: <Home></Home>,
+    children: [
       {
-        path:'/',
-        element:<Shop></Shop>
+        path: '/',
+        element: <Shop></Shop>
       },
       {
         path: '/orders',
-        element:<Orders></Orders>,
-        loader:cartProductsLoader 
+        element: <Orders></Orders>,
+        loader: cartProductsLoader
       },
       {
-        path:'/inventory',
-        element:<Inventory></Inventory>
+        path: '/inventory',
+        element: <Inventory></Inventory>
       },
       {
-        path:'/checkout',
-        element:<Checkout></Checkout>
+        path: '/checkout',
+        element: <Checkout></Checkout>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/signup',
-        element:<SingUp></SingUp>
+        path: '/signup',
+        element: <SingUp></SingUp>
       }
     ]
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}></RouterProvider>
+  <AuthProvider>
+    <RouterProvider router={router}></RouterProvider>
+  </AuthProvider>
 )
