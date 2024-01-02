@@ -48,8 +48,22 @@ form{
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.032px;
-  margin-top: 35px;
+  margin-top: 25px;
 }
 .btn-submit:hover {
   background: rgba(255, 153, 0, 0.6);
+}
+.form-container p{
+    margin-top: 0px;
+    text-align: center;
+}
+.text-error{
+  color: red;
+}
+p small a{
+  text-decoration: none;
+  color: #f90;
+}
+p small a:hover{
+  color: black;
 }
