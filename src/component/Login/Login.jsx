@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const [error,setError] = useState('');
+    const navigate = useNavigate();
     const handleSignIn = (event) =>{
         // stop reloading
         event.preventDefault();
@@ -21,6 +22,8 @@ const Login = () => {
             console.log(loggedUser);
             // clear the form
             form.reset();
+            // navigate
+            navigate('/');
         })
         .catch(error => {
             setError(error.message);

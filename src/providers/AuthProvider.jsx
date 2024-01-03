@@ -9,6 +9,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
     // const user = {displayName :"Arif"}
     const [user, setUser] = useState(null);
+    const [loading,setLoading] =useState(true);
     const createUser = (email,password) =>{
         return createUserWithEmailAndPassword(auth, email, password);
     }
@@ -22,6 +23,8 @@ const AuthProvider = ({ children }) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth,currentUser => {
             setUser(currentUser);
+            // set loading false when we get the user
+            setLoading(false);
         });
         // stop observing while unmounting
         return ()=> {
@@ -32,7 +35,8 @@ const AuthProvider = ({ children }) => {
         user,
         createUser,
         signIn,
-        logOut
+        logOut,
+        loading
     }
     
     return (
