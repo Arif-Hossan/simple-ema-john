@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const SingUp = () => {
     const [error,setError]= useState('');
+    // use createUser function using context
+    const {createUser} = useContext(AuthContext);
     const handleSignUp = (event) => {
         // stop reloading
         event.preventDefault();
+        // clear the error
+        setError('');
         // 
         const form = event.target;
         const email = form.email.value;
@@ -21,6 +26,16 @@ const SingUp = () => {
             setError('Password must be 6 characters or longer');
             return;
         }
+        createUser(email,password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            // clear the form data
+            form.reset();
+        })
+        .catch(error => {
+            setError(error.message);
+        })
     }
     return (
         <div className='form-container'>
