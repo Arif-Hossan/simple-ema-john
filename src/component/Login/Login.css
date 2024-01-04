@@ -53,9 +53,13 @@ form{
 .btn-submit:hover {
   background: rgba(255, 153, 0, 0.6);
 }
+
 .form-container p{
     margin-top: 0px;
     text-align: center;
+}
+.form-container p small span{
+  text-align: left;
 }
 .text-error{
   color: red;
